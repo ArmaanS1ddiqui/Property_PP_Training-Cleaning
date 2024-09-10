@@ -194,14 +194,6 @@ pipe.fit(X_train, y_train)
 y_pred_gbr = pipe.predict(X_test)
 print("Gradient Boosting R²:", r2_score(y_test, y_pred_gbr))
 
-# %%
-import xgboost as xgb
-
-xgboost_model = xgb.XGBRegressor(n_estimators=100)
-pipe = make_pipeline(column_trans, scaler, xgboost_model)
-pipe.fit(X_train, y_train)
-y_pred_xgb = pipe.predict(X_test)
-print("XGBoost R²:", r2_score(y_test, y_pred_xgb))
 
 # %%
 from sklearn.svm import SVR
@@ -286,5 +278,7 @@ y_pred_weighted_avg = (
 # Evaluate the weighted average predictions
 weighted_avg_r2_score = r2_score(y_test, y_pred_weighted_avg)
 print("Weighted Average method R²:", weighted_avg_r2_score)
+
+# %%
 
 # %%
